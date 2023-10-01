@@ -1,11 +1,8 @@
 import streamlit as st
-import plotly.graph_objs as go
 import pandas as pd
 import numpy as np
 import math
-from mpl_toolkits import mplot3d
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 
 
 def main():
