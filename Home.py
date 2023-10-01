@@ -4,10 +4,6 @@ import pandas as pd
 import streamlit as st
 import plotly.graph_objs as go
 
-# 这是一个修改内容，测试是否被修改
-# 第二次修改内容哈哈
-# 为何
-# 为啥成功了
 # 设置页面配置
 st.set_page_config(page_title="我的论文", page_icon=":chart_with_upwards_trend:",
                    layout="centered",  # centered  wide
