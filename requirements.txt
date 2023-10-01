@@ -71,7 +71,6 @@ fonttools==4.42.0
 fqdn==1.5.1
 frozenlist==1.4.0
 future==0.18.3
-GDAL @ file:///D:/_stu_python/github/%E7%95%8C%E9%9D%A2%2B%E7%BD%91%E7%AB%AF/mysite/GDAL-3.4.3-cp39-cp39-win_amd64.whl#sha256=d4f3650d26884da20bde7f33a542b02bfae7ccc017d44a9e6cf5600b84304878
 geemap==0.25.0
 geocoder==1.38.1
 geopandas==0.13.2
