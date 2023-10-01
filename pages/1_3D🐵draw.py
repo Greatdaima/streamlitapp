@@ -4,14 +4,7 @@ import pandas as pd
 import streamlit as st
 import plotly.graph_objs as go
 
-# 设置页面配置
-st.set_page_config(page_title="个人展示仓库", page_icon=":chart_with_upwards_trend:",
-                   layout="centered",  # centered  wide
-                   initial_sidebar_state="expanded")
-
-st.title('这是首页')
-
-st.title('画图')
+st.title('3D散点图')
 x, y, z = np.random.multivariate_normal(
     np.array([0, 0, 0]), np.eye(3), 1000).transpose()
 

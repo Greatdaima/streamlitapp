@@ -3,20 +3,19 @@ import pandas as pd
 import numpy as np
 import math
 import matplotlib.pyplot as plt
+import plotly.graph_objs as go
 
+st.set_page_config(page_title="3D爱心散点图",
+                   page_icon=":heart:", layout='centered')
 
-def main():
-    st.title("3D爱心三点图")
-
-    if st.button("Draw"):
-        draw_heart()
+# 太卡了，不对劲
 
 
 def draw_heart():
     # start generating points
-    x_lim = np.linspace(-10, 10, 200)
-    y_lim = np.linspace(-10, 10, 200)
-    z_lim = np.linspace(-10, 10, 200)
+    x_lim = np.linspace(-10, 10, 1000)
+    y_lim = np.linspace(-10, 10, 1000)
+    z_lim = np.linspace(-10, 10, 1000)
     X_points = []  # 用来存放绘图点X坐标
     Y_points = []  # 用来存放绘图点Y坐标
     Z_tmp = []
@@ -40,16 +39,29 @@ def draw_heart():
                 Z_points.append(min(Z_tmp))
                 Z_tmp.clear()
 
-    fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
-    ax.set_zlim(-1, 1)
-    ax.set_xlim(-1, 1)
-    ax.set_ylim(-1, 1)
-    ax.scatter(X_points, Y_points, Z_points)
-    # 设置相机角度
-    ax.view_init(elev=20, azim=-60)
+    fig = go.Figure(data=go.Scatter3d(
+        x=X_points,
+        y=Y_points,
+        z=Z_points,
+        mode="markers",
+        marker=dict(
+            size=5,
+            color=z,
+            colorscale="Viridis",
+            opacity=0.8,
+        )
+    ), layout=go.Layout(
+        height=650,
+        paper_bgcolor='#00f4f0',
+    ))
 
-    st.write(fig)
+    st.write(fig, use_container_width=True)
+
+
+def main():
+    st.title("3D爱心散点图")
+    if st.button('DRAW'):
+        draw_heart()
 
 
 if __name__ == "__main__":
