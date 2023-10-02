@@ -34,6 +34,8 @@ def draw_scatter3d():
 
     st.write(fig, use_container_width=True)
 
+# 好烦啊
+
 
 with st.container():
     st.write('展示3D图')
