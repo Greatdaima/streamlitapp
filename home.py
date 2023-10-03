@@ -8,40 +8,18 @@ import plotly.graph_objs as go
 st.set_page_config(page_title="个人展示仓库", page_icon=":chart_with_upwards_trend:",
                    layout="centered",  # centered  wide
                    initial_sidebar_state="expanded")
-
-st.header('这是首页')
-
-
-def draw_scatter3d():
-
-    x, y, z = np.random.multivariate_normal(
-        np.array([0, 0, 0]), np.eye(3), 5000).transpose()
-
-    fig = go.Figure(data=go.Scatter3d(
-        x=x,
-        y=y,
-        z=z,
-        mode="markers",
-        marker=dict(
-            size=5,
-            color=z,
-            colorscale="Viridis",
-            opacity=0.8,
-        )
-    ), layout=go.Layout(
-        paper_bgcolor='#00f4f0',
-    ))
-
-    st.write(fig, use_container_width=True)
-
-# 好烦啊
-# 真的无语啊
-
+# 初始化 session_state
+if 'pwd' not in st.session_state:
+    st.session_state['pwd'] = ''
 
 with st.container():
     st.write('展示3D图')
 
-    draw_scatter3d()
+    pwd = st.text_input('告诉我密码:')
 
-with st.expander('这是后面的内定', expanded=True):
-    draw_scatter3d()
+    # 处理用户输入的密码
+    if pwd != '':
+        if pwd != st.__name__:
+            st.write(pwd + '$你被骗了，哈哈！')
+        else:
+            st.write('恭喜你，哈哈！')

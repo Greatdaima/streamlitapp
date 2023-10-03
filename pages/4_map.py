@@ -13,4 +13,6 @@ st.map(df,
        latitude='col1',
        longitude='col2',
        size='col3',
-       color='col4')
+       color='col4',
+       zoom=14,
+       use_container_width=True)
