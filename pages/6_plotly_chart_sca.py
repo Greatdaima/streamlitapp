@@ -14,6 +14,7 @@ fig = px.scatter(
     size_max=60,
 )
 
+
 tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
 with tab1:
     # Use the Streamlit theme.
