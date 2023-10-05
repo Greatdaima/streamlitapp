@@ -12,7 +12,7 @@ st.set_page_config(page_title="个人展示仓库", page_icon=":chart_with_upwar
 if 'pwd' not in st.session_state:
     st.session_state['pwd'] = ''
 
-# 怎么上传啊
+# 再次上传，不知是否成功
 with st.container():
     st.write('展示3D图')
 
